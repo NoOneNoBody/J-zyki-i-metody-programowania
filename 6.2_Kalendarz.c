@@ -1,4 +1,4 @@
-/*Wykona³ Micha³ Warzecha I rok Informatyka EAIIB grupa 6b*/
+/*WykonaÂ³ MichaÂ³ Warzecha I rok Informatyka EAIIB grupa 6b*/
 #include <stdio.h>
 #include<time.h>
 #include <stdlib.h>
@@ -20,7 +20,7 @@ void print_day(struct tm tm)
   }
 }
 
-int main()
+int main(void)
 {
   time_t t = time(NULL);
   int time_of_day = 24*60*60;
