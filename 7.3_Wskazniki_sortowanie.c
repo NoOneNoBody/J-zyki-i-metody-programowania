@@ -1,4 +1,4 @@
-/*Wykona³ Micha³ Warzecha I rok Informatyka EAIIB grupa 6b*/
+/*WykonaÂ³ MichaÂ³ Warzecha I rok Informatyka EAIIB grupa 6b*/
 #include <stdio.h>
 #include <stdlib.h>
 #include<time.h>
@@ -54,7 +54,7 @@ void Wyswietl_wskazniki(int *wskazniki[])
   printf("\n");
 }
 
-int main()
+int main(void)
 {
   int tablica[10];
   Losuj(tablica);
