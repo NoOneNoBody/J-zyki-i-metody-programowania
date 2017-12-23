@@ -1,4 +1,4 @@
-/*Wykona≥ Micha≥ Warzecha I rok Informatyka EAIIB grupa 6b*/
+/*Wykona≈Ç Micha≈Ç Warzecha I rok Informatyka EAIIB grupa 6b*/
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -16,7 +16,7 @@ double Srednia_wazona(int *poczatek, int *koniec)
   return (suma/ilosc);
 }
 
-int main()
+int main(void)
 {
   int tab[6];
   for(int i=0;i<6;i++)
