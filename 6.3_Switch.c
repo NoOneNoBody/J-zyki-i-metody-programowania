@@ -1,4 +1,4 @@
-/*Wykona≥ Micha≥ Warzecha I rok Informatyka EAIIB grupa 6b*/
+/*Wykona≈Ç Micha≈Ç Warzecha I rok Informatyka EAIIB grupa 6b*/
 #include <stdio.h>
 #include <stdlib.h>
 #include<time.h>
@@ -65,7 +65,7 @@ void MinMax(int tablica[])
   printf("Minimalna wartosc to: %d, a maksymalna to: %d.\n",min,max);
 }
 
-int main()
+int main(void)
 {
   int choise = 0;
   int chosen = 1;
