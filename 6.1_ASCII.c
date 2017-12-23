@@ -1,7 +1,7 @@
-/*Wykona≥ Micha≥ Warzecha I rok Informatyka EAIIB grupa 6b*/
+/*Wykona≈Ç Micha≈Ç Warzecha I rok Informatyka EAIIB grupa 6b*/
 #include<stdio.h>
 
-int main()
+int main(void)
 {
     int i;
     i=0;
