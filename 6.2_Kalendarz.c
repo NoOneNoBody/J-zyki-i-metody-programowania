@@ -1,3 +1,4 @@
+/*Wykona³ Micha³ Warzecha I rok Informatyka EAIIB grupa 6b*/
 #include <stdio.h>
 #include<time.h>
 #include <stdlib.h>

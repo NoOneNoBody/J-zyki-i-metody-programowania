@@ -1,30 +1,51 @@
+/*Wykona³ Micha³ Warzecha I rok Informatyka EAIIB grupa 6b*/
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdarg.h>
 
-void auto_scanf(char tekst[],int ilosc, ...)
+void Wypisz_dane(int ilosc,int dane[])
 {
-  va_list vl;
-  va_start(vl,ilosc);
+  printf("Podane dane to:\n");
+  for(int i=0;i<ilosc;i++)
+  {
+    printf("%d ",dane[i]);
+  }
+  printf("\n");
+}
+
+void Wypisz_tekst_pobierz_dane(char tekst[])
+{
+  int ilosc=0;
   int i=0;
   while(tekst[i] != '\0')
   {
     if(tekst[i] == '%' && tekst[i+1] == 'd')
     {
-      int d = va_arg(vl,int);
-      printf("%d",d);
+      ilosc++;
+    }
+    i++;
+  }
+  int dane[ilosc];
+  ilosc=0;
+  i=0;
+  while(tekst[i] != '\0')
+  {
+    if(tekst[i] == '%' && tekst[i+1] == 'd')
+    {
+      scanf("%d",&dane[ilosc]);
+      ilosc++;
       i+=2;
       continue;
     }
     printf("%c",tekst[i]);
     i++;
   }
-  va_end(vl);
+  Wypisz_dane(ilosc, dane);
 }
 
-int main()
+int main(void)
 {
   char tekst[] = "Zmienna 1: %d \ndruga zmienna: %d \ntrzecia: %d\n";
-  auto_scanf(tekst,4,4,2,0,10);
+  Wypisz_tekst_pobierz_dane(tekst);
   return 0;
 }

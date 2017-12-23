@@ -1,3 +1,4 @@
+/*Wykona³ Micha³ Warzecha I rok Informatyka EAIIB grupa 6b*/
 #include <stdio.h>
 #include <stdlib.h>
 #include<time.h>
@@ -7,7 +8,7 @@ void Losuj(int tablica[])
   srand(time(NULL));
   for(int i=0;i<10;i++)
   {
-    tablica[i]=rand();
+    tablica[i]=rand()%100;
   }
 }
 
@@ -68,7 +69,8 @@ int main()
 {
   int choise = 0;
   int chosen = 1;
-  int tablica [10]={0,1,2,3,4,5,6,7,8,9};
+  int tablica [10];
+  Losuj(tablica);
   int tablica_posortowana [10];
   do
   {
