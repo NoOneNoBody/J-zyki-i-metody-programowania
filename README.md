@@ -1,3 +1,3 @@
 # Jezyki-i-metody-programowania
 Zadania domowe
-Michał Warzecha Informatyka EAIiIB grupa 6
+Michał Warzecha rok I Informatyka EAIiIB grupa 6
