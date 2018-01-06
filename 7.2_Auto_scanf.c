@@ -1,4 +1,4 @@
-/*Wykona≥ Micha≥ Warzecha I rok Informatyka EAIIB grupa 6b*/
+/*Wykona≈Ç Micha≈Ç Warzecha I rok Informatyka EAIIB grupa 6b*/
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdarg.h>
