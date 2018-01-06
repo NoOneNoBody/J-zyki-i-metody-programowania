@@ -5,15 +5,7 @@
 
 void print_day(struct tm tm)
 {
-  if(tm.tm_mday<10)
-  {
-    printf(" %d ",tm.tm_mday);
-  }
-  else
-  {
-    printf("%d ",tm.tm_mday);
-  }
-
+  printf("%2d ",tm.tm_mday);
   if(tm.tm_wday==6)
   {
     printf("\n");
