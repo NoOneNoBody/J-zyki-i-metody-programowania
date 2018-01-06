@@ -65,54 +65,57 @@ void MinMax(int tablica[])
   printf("Minimalna wartosc to: %d, a maksymalna to: %d.\n",min,max);
 }
 
+void MenuWyboru(int tablica[], int tablica_posortowana[], int* koniec)
+{
+  int wybor = 0;
+  printf("1.Losuj tablice\n2.Wyswietl\n3.Srednia\n4.Mediana\n5.Minimalna i maksymalna wartosc\n6.Wyjdz\n");
+  scanf("%d",&wybor);
+  switch(wybor)
+  {
+    case 1:
+    {
+      Losuj(tablica);
+      break;
+    }
+    case 2:
+    {
+      Wyswietl(tablica);
+      break;
+    }
+    case 3:
+    {
+      Srednia(tablica);
+      break;
+    }
+    case 4:
+    {
+      Sortuj(tablica,tablica_posortowana);
+      printf("Mediana liczb: %f\n",(tablica_posortowana[4]+tablica_posortowana[5])/2.0);
+      break;
+    }
+    case 5:
+    {
+      MinMax(tablica);
+      break;
+    }
+    case 6:
+    {
+      *koniec = 0;
+      break;
+    }
+  }
+}
+
 int main(void)
 {
-  int choise = 0;
-  int chosen = 1;
+  int koniec = 1;
   int tablica [10];
   Losuj(tablica);
   int tablica_posortowana [10];
   do
   {
-    choise = 0;
-    chosen = 1;
-    printf("1.Losuj tablice\n2.Wyswietl\n3.Srednia\n4.Mediana\n5.Minimalna i maksymalna wartosc\n6.Wyjdz\n");
-    scanf("%d",&choise);
-    switch(choise)
-    {
-      case 1:
-      {
-        Losuj(tablica);
-        break;
-      }
-      case 2:
-      {
-        Wyswietl(tablica);
-        break;
-      }
-      case 3:
-      {
-        Srednia(tablica);
-        break;
-      }
-      case 4:
-      {
-        Sortuj(tablica,tablica_posortowana);
-        printf("Mediana liczb: %f\n",(tablica_posortowana[4]+tablica_posortowana[5])/2.0);
-        break;
-      }
-      case 5:
-      {
-        MinMax(tablica);
-        break;
-      }
-      case 6:
-      {
-        chosen = 0;
-        break;
-      }
-    }
-  }while(chosen);
+    MenuWyboru(tablica, tablica_posortowana, &koniec);
+  }while(koniec);
 
   return 0;
 }
