@@ -47,5 +47,6 @@ int main(void)
 {
   char tekst[] = "Zmienna 1: %d \ndruga zmienna: %d \ntrzecia: %d\n";
   Wypisz_tekst_pobierz_dane(tekst);
+  
   return 0;
 }
