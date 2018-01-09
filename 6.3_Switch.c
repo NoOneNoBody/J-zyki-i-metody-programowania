@@ -6,7 +6,7 @@
 void Losuj(int tablica[])
 {
   srand(time(NULL));
-  for(int i=0;i<10;i++)
+  for(int i=0;i<10;++i)
   {
     tablica[i]=rand()%100;
   }
@@ -14,7 +14,7 @@ void Losuj(int tablica[])
 
 void Wyswietl(int tablica[])
 {
-  for(int i=0;i<10;i++)
+  for(int i=0;i<10;++i)
   {
     printf("%d ",tablica[i]);
   }
@@ -24,7 +24,7 @@ void Wyswietl(int tablica[])
 void Srednia(int tablica[])
 {
   int suma = 0;
-  for(int i=0;i<10;i++)
+  for(int i=0;i<10;++i)
   {
     suma += tablica[i];
   }
@@ -33,7 +33,7 @@ void Srednia(int tablica[])
 
 void Sortuj(int tablica[],int posortowana[])
 {
-  for(int i=0;i<10;i++)
+  for(int i=0;i<10;++i)
   {
     posortowana[i]=tablica[i];
     int j = i;
@@ -51,7 +51,7 @@ void MinMax(int tablica[])
 {
   int min=tablica[0];
   int max = tablica[0];
-  for(int i=1;i<10;i++)
+  for(int i=1;i<10;++i)
   {
     if(tablica[i]<min)
     {
