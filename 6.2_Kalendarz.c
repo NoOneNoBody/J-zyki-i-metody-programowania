@@ -42,5 +42,6 @@ void print_month()
 int main(void)
 {
   print_month();
+  
   return 0;
 }
