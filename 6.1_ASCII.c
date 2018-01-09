@@ -3,8 +3,7 @@
 
 int main(void)
 {
-  int i;
-  i=0;
+  int i = 0;
   do
   {
     printf("%d %c \n",i,i);
