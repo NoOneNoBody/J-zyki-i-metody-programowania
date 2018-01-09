@@ -12,7 +12,7 @@ void print_day(struct tm tm)
   }
 }
 
-int main(void)
+void print_month()
 {
   time_t t = time(NULL);
   int time_of_day = 24*60*60;
@@ -37,5 +37,10 @@ int main(void)
     tm = *localtime(&t);
   }
   printf("\n");
+}
+
+int main(void)
+{
+  print_month();
   return 0;
 }
