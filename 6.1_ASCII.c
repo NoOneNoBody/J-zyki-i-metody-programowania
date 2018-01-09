@@ -7,7 +7,7 @@ int main(void)
   do
   {
     printf("%d %c \n",i,i);
-    i++;
+    ++i;
   }
   while(i<=255);
   return 0;
