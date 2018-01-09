@@ -23,7 +23,7 @@ void print_month()
     t -= time_of_day;
     tm = *localtime(&t);
   }
-  for(int i =0; i<tm.tm_wday; i++)
+  for(int i =0; i<tm.tm_wday; ++i)
   {
     printf("   ");
   }
