@@ -6,7 +6,7 @@
 void Losuj(int tablica[])
 {
   srand(time(NULL));
-  for(int i=0;i<10;i++)
+  for(int i=0;i<10;++i)
   {
     tablica[i]=rand()%100;
   }
@@ -16,10 +16,10 @@ void Sortowanie(int *wskazniki[])
 {
   int sorted=0;
   int *tmp;
-  for(int i=0;i<10;i++)
+  for(int i=0;i<10;++i)
   {
     sorted=1;
-    for(int j=0;j<9-i;j++)
+    for(int j=0;j<9-i;++j)
     {
       if(*wskazniki[j]>*wskazniki[j+1])
       {
@@ -38,7 +38,7 @@ void Sortowanie(int *wskazniki[])
 
 void Wyswietl(int tablica[])
 {
-  for(int i=0;i<10;i++)
+  for(int i=0;i<10;++i)
   {
     printf("%d ",tablica[i]);
   }
@@ -47,7 +47,7 @@ void Wyswietl(int tablica[])
 
 void Wyswietl_wskazniki(int *wskazniki[])
 {
-  for(int i=0;i<10;i++)
+  for(int i=0;i<10;++i)
   {
     printf("%d ",*wskazniki[i]);
   }
@@ -59,7 +59,7 @@ int main(void)
   int tablica[10];
   Losuj(tablica);
   int *wskazniki[10];
-  for(int i=0;i<10;i++)
+  for(int i=0;i<10;++i)
   {
     wskazniki[i] = &tablica[i];
   }
