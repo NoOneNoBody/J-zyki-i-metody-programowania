@@ -11,7 +11,7 @@ double Srednia_wazona(int *poczatek, int *koniec)
     int wartosc = *(poczatek+i);
     suma += wartosc*(i);
     ilosc += i;
-    i++;
+    ++i;
   }while(poczatek+i<=koniec);
   return (suma/ilosc);
 }
@@ -19,7 +19,7 @@ double Srednia_wazona(int *poczatek, int *koniec)
 int main(void)
 {
   int tab[6];
-  for(int i=0;i<6;i++)
+  for(int i=0;i<6;++i)
   {
     printf("Podaj liczbe nr %d: ",(i+1));
     scanf("%d",&tab[i]);
