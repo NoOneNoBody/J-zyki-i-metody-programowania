@@ -6,7 +6,7 @@
 void Wypisz_dane(int ilosc,int dane[])
 {
   printf("Podane dane to:\n");
-  for(int i=0;i<ilosc;i++)
+  for(int i=0;i<ilosc;++i)
   {
     printf("%d ",dane[i]);
   }
@@ -21,9 +21,9 @@ void Wypisz_tekst_pobierz_dane(char tekst[])
   {
     if(tekst[i] == '%' && tekst[i+1] == 'd')
     {
-      ilosc++;
+      ++ilosc;
     }
-    i++;
+    ++i;
   }
   int dane[ilosc];
   ilosc=0;
@@ -33,12 +33,12 @@ void Wypisz_tekst_pobierz_dane(char tekst[])
     if(tekst[i] == '%' && tekst[i+1] == 'd')
     {
       scanf("%d",&dane[ilosc]);
-      ilosc++;
+      ++ilosc;
       i+=2;
       continue;
     }
     printf("%c",tekst[i]);
-    i++;
+    ++i;
   }
   Wypisz_dane(ilosc, dane);
 }
