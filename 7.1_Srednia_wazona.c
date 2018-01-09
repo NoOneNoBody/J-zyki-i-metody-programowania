@@ -26,5 +26,6 @@ int main(void)
   }
   double srednia = Srednia_wazona(&tab[0],&tab[5]);
   printf("Srednia wazona liczb to: %lf\n",srednia);
+  
   return 0;
 }
