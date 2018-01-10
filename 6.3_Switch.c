@@ -39,9 +39,9 @@ void Sortuj(int tablica[],int posortowana[])
     int j = i;
     while(j>0 && posortowana[j]<posortowana[j-1])
     {
-      int tmp = posortowana[j-1];
+      int tymczasowy = posortowana[j-1];
       posortowana[j-1]= posortowana[j];
-      posortowana[j] = tmp;
+      posortowana[j] = tymczasowy;
       --j;
     }
   }
