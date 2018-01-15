@@ -1,4 +1,4 @@
-#Wykonał Michał Warzecha I rok Informatyka EAIIB grupa 6b
+//Wykonał Michał Warzecha I rok Informatyka EAIIB grupa 6b
 #include <stdio.h>
 #include <string.h>
 #include <math.h>
