@@ -54,7 +54,7 @@ void Wyswietl_wskazniki(int *wskazniki[])
   printf("\n");
 }
 
-void KopiujWskazniki(int tablica[], int *wskazniki[])
+void Kopiuj_wskazniki(int tablica[], int *wskazniki[])
 {
   for(int i=0;i<10;++i)
   {
@@ -67,7 +67,7 @@ int main(void)
   int tablica[10];
   Losuj(tablica);
   int *wskazniki[10];
-  KopiujWskazniki(tablica,wskazniki);
+  Kopiuj_wskazniki(tablica,wskazniki);
   printf("Wylosowana tablica:\n");
   Wyswietl(tablica);
   Sortowanie(wskazniki);
