@@ -18,5 +18,6 @@ int main(void)
   printf("\n");
   clean();
   printToStdout();
+  printf("\n");
   return 0;
 }
