@@ -1,8 +1,8 @@
-//Wykona³ Micha³ Warzecha I rok Informatyka EAIIB grupa 6b
+//WykonaÂ³ MichaÂ³ Warzecha I rok Informatyka EAIIB grupa 6b
 #include <stdio.h>
 #include <stdlib.h>
 #include "clipboard.h"
-int main()
+int main(void)
 {
   initialise();
   printToStdout();
