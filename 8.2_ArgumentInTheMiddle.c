@@ -146,6 +146,7 @@ int printArgumentInTheMiddle(void* argument, enum ArgumentType type, unsigned wi
   printArgument(argument,type);
   printSpaces(width-startPosition-length);
   printf("\n");
+  return 0;
 }
 
 int main(void)
