@@ -1,5 +1,6 @@
 //Wykonał Michał Warzecha I rok Informatyka EAIIB grupa 6b
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 
 long long copyArgumentAndPrintCharByCharReturningSumOfArguments(void* data, size_t sizeOfData)
