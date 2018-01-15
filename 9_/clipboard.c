@@ -54,7 +54,7 @@ void initialise(void)
 
 int set(const char* text)
 {
-  for(int i=0;i<(strlen(text));++i)
+  for(int i=0;i<(int)(strlen(text));++i)
   {
     if(i>=capacity())
       break;
@@ -78,7 +78,7 @@ void printToStdout(void)
 int append(const char* text)
 {
   int current_size = count();
-  for(int i=current_size;i<(current_size+strlen(text));++i)
+  for(int i=current_size;i<(int)(current_size+strlen(text));++i)
   {
     if(i>=capacity())
       break;
