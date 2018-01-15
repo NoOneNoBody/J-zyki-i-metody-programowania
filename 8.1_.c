@@ -94,21 +94,22 @@ int Wczytaj_ilosc_liczb(void)
   return ilosc;
 }
 
-void Wczytywanie(int ilosc, int *dane)
+int Wczytywanie(int ilosc, int *dane)
 {
   int dana=0;
   for(int i=0;i<ilosc;++i)
   {
-    scanf("%d",&dana);
-    if(dana == EOF)
+    int wartosc_scanf = scanf("%d",&dana);
+    if(wartosc_scanf == EOF || wartosc_scanf == 0)
     {
-      return;
+      return i;
     }
     else
     {
       dane[i] = dana;
     }
   }
+  return ilosc;
 }
 
 int Dziesietne_na_osemkowe(int liczba)
@@ -165,8 +166,8 @@ int main(void)
     printf("Zbyt duza liczba danych");
     return 1;
   }
-  Wczytywanie(ilosc,dane);
-  Wypisz_wszystko(ilosc,dane);
+  int wpisana_ilosc = Wczytywanie(ilosc,dane);
+  Wypisz_wszystko(wpisana_ilosc,dane);
 
   return 0;
 }
