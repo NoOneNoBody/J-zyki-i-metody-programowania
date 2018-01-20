@@ -26,21 +26,21 @@ void FixedUpdate()
   }
   else
   {
-	if((round_counter/2)%2==0)
-	{
-	  winner = -1;
+    if((round_counter/2)%2==0)
+    {
+      winner = -1;
       PONG.x = PADDLE.x;
-	  PONG.y = PADDLE.y+1;
-	  PONG.vel_x = 10*x_multiplier;
-	}
-	else if((round_counter/2)%2==1)
-	{
-	  winner = 1;
-	  PONG.x = PADDLE_AI.x;
-	  PONG.y = PADDLE_AI.y+1;
-	  PONG.vel_x = -10*x_multiplier;
-	}
-	PONG.vel_y = -3;
+      PONG.y = PADDLE.y+1;
+      PONG.vel_x = 10*x_multiplier;
+    }
+    else if((round_counter/2)%2==1)
+    {
+      winner = 1;
+      PONG.x = PADDLE_AI.x;
+      PONG.y = PADDLE_AI.y+1;
+      PONG.vel_x = -10*x_multiplier;
+    }
+    PONG.vel_y = -3;
   }
 }
 
