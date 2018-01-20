@@ -158,7 +158,7 @@ void paddle_collision(_paddle_* PADDLE, _pong_* PONG, int side)
 	    GameOver(winner);
 	  }
 	  PONG->x = PADDLE->x;
-      PONG->vel_x = ((rand()%20/10.0)+8)*x_multiplier;
+          PONG->vel_x = ((rand()%20/10.0)+8)*x_multiplier;
 	  PONG->vel_y = -4+PONG->y-PADDLE->y;
 	}
 	else if(side == -1 && PONG->x>PADDLE->x)
@@ -168,7 +168,7 @@ void paddle_collision(_paddle_* PADDLE, _pong_* PONG, int side)
 	    GameOver(winner);
 	  }
 	  PONG->x = PADDLE->x;
-      PONG->vel_x = -((rand()%20/10.0)+8)*x_multiplier;
+          PONG->vel_x = -((rand()%20/10.0)+8)*x_multiplier;
 	  PONG->vel_y = -5+PONG->y-PADDLE->y;
 	}
   }
@@ -199,15 +199,15 @@ void draw_table(_table_* TABLE)
 {
   for(int i=0;i<=TABLE->max_x+1;++i)
   {
-	if(i==TABLE->right_net-1)
-	{
+    if(i==TABLE->right_net-1)
+    {
       for(int j=0;j<TABLE->net_hight;++j)
-	  {
-		mvprintw(TABLE->max_y-j,i,"|");
-	  }
-	}
-    mvprintw(TABLE->max_y+1,TABLE->max_x-i,"\u2588");
-	mvprintw(8,i,"\u2588");
+      {
+        mvprintw(TABLE->max_y-j,i,"|");
+      }
+    }
+  mvprintw(TABLE->max_y+1,TABLE->max_x-i,"\u2588");
+  mvprintw(8,i,"\u2588");
   }
 }
 
@@ -236,34 +236,34 @@ void draw_UI(void)
   char* line_to_print;
   if(Opponent_points >= 11 && (Opponent_points-Player_points) >= 2)
   {
-	isPlay = 0;
-	isEnd = 1;
-	round_counter = 0;
-	line_to_print = "Przegrales";
+    isPlay = 0;
+    isEnd = 1;
+    round_counter = 0;
+    line_to_print = "Przegrales";
     mvprintw(5,(int)(TABLE.max_x/2)-(int)(strlen(line_to_print)/2),"%s",line_to_print);
-	line_to_print = "Przycisnij spacje by zagrac ponownie";
+    line_to_print = "Przycisnij spacje by zagrac ponownie";
     mvprintw((int)TABLE.max_y/2,(int)(TABLE.max_x/2)-(int)(strlen(line_to_print)/2),"%s",line_to_print);
   }
   else if(Player_points >= 11 && (Player_points-Opponent_points) >= 2)
   {
-	isPlay = 0;
-	isEnd = 1;
-	round_counter = 0;
-	line_to_print = "Wygrales";
+    isPlay = 0;
+    isEnd = 1;
+    round_counter = 0;
+    line_to_print = "Wygrales";
     mvprintw(5,(int)(TABLE.max_x/2)-(int)(strlen(line_to_print)/2),"%s",line_to_print);
-	line_to_print = "Przycisnij spacje by zagrac ponownie";
+    line_to_print = "Przycisnij spacje by zagrac ponownie";
     mvprintw((int)TABLE.max_y/2,(int)(TABLE.max_x/2)-(int)(strlen(line_to_print)/2),"%s",line_to_print);
   }
   else if(isPlay==0)
   {
-	if((round_counter/2)%2==0)
-	{
-	  line_to_print = "Przycisnij spacje by zaserwowac";
-	}
-	else if((round_counter/2)%2==1)
-	{
-	  line_to_print = "Przycisnij spacje by przeciwnik zaserwowal";
-	}
+    if((round_counter/2)%2==0)
+    {
+      line_to_print = "Przycisnij spacje by zaserwowac";
+    }
+    else if((round_counter/2)%2==1)
+    {
+      line_to_print = "Przycisnij spacje by przeciwnik zaserwowal";
+    }
     mvprintw((int)TABLE.max_y/2,(int)(TABLE.max_x/2)-(int)(strlen(line_to_print)/2),"%s",line_to_print);
   }
   line_to_print = " _   _        _ ";
@@ -283,11 +283,11 @@ void GameOver(int winner)
   PADDLE_AI.y = rand()%5+11;
   if(winner == -1)
   {
-	++Opponent_points;
+    ++Opponent_points;
   }
   else if(winner == 1)
   {
-	++Player_points;
+    ++Player_points;
   }
 }
 
@@ -316,12 +316,12 @@ int* check_keys(void)
   if (input == ' ') 
   {
     isPlay = 1;
-	if(isEnd)
-	{
-	  Player_points = 0;
+    if(isEnd)
+    {
+      Player_points = 0;
       Opponent_points = 0;
-	  isEnd = 0;
-	}
+      isEnd = 0;
+    }
   }
   if (input == 'q') 
   {
