@@ -238,6 +238,7 @@ void draw_UI(void)
   {
 	isPlay = 0;
 	isEnd = 1;
+	round_counter = 0;
 	line_to_print = "Przegrales";
     mvprintw(5,(int)(TABLE.max_x/2)-(int)(strlen(line_to_print)/2),"%s",line_to_print);
 	line_to_print = "Przycisnij spacje by zagrac ponownie";
@@ -247,6 +248,7 @@ void draw_UI(void)
   {
 	isPlay = 0;
 	isEnd = 1;
+	round_counter = 0;
 	line_to_print = "Wygrales";
     mvprintw(5,(int)(TABLE.max_x/2)-(int)(strlen(line_to_print)/2),"%s",line_to_print);
 	line_to_print = "Przycisnij spacje by zagrac ponownie";
@@ -318,7 +320,6 @@ int* check_keys(void)
 	{
 	  Player_points = 0;
       Opponent_points = 0;
-	  round_counter = 0;
 	  isEnd = 0;
 	}
   }
