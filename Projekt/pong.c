@@ -120,28 +120,28 @@ void table_collision(_pong_* PONG, _table_* TABLE)
   }
   if(PONG->y>TABLE->max_y)
   {
-	if(PONG->x>=TABLE->right_net)
-	{
-	  if(winner == 1)
-	  {
-	    GameOver(winner);
-	  }
-	  else if(winner == -1)
-	  {
-	    winner = 1;
-	  }
-	}
-	if(PONG->x<TABLE->right_net-1)
-	{
-	  if(winner == -1)
-	  {
-	    GameOver(winner);
-	  }
-	  else if(winner == 1)
-	  {
-	    winner = -1;
-	  }
-	}
+    if(PONG->x>=TABLE->right_net)
+    {
+      if(winner == 1)
+      {
+        GameOver(winner);
+      }
+      else if(winner == -1)
+      {
+        winner = 1;
+      }
+    }
+    if(PONG->x<TABLE->right_net-1)
+    {
+      if(winner == -1)
+      {
+        GameOver(winner);
+      }
+      else if(winner == 1)
+      {
+       winner = -1;
+      }
+    }
     PONG->vel_y = (-abs(PONG->vel_y)*PONG->bouncines);
     PONG->y = TABLE->max_y;
   }
@@ -151,26 +151,26 @@ void paddle_collision(_paddle_* PADDLE, _pong_* PONG, int side)
 {
   if(PONG->y>=(int)PADDLE->y && PONG->y<((int)PADDLE->y+PADDLE->height+1))
   {
-	if(side == 1 && PONG->x<PADDLE->x)
-	{
-	  if(winner == 1)
-	  {
-	    GameOver(winner);
-	  }
-	  PONG->x = PADDLE->x;
-          PONG->vel_x = ((rand()%20/10.0)+8)*x_multiplier;
-	  PONG->vel_y = -4+PONG->y-PADDLE->y;
-	}
-	else if(side == -1 && PONG->x>PADDLE->x)
-	{
-	  if(winner == -1)
-	  {
-	    GameOver(winner);
-	  }
-	  PONG->x = PADDLE->x;
-          PONG->vel_x = -((rand()%20/10.0)+8)*x_multiplier;
-	  PONG->vel_y = -5+PONG->y-PADDLE->y;
-	}
+    if(side == 1 && PONG->x<PADDLE->x)
+    {
+      if(winner == 1)
+      {
+        GameOver(winner);
+      }
+      PONG->x = PADDLE->x;
+      PONG->vel_x = ((rand()%20/10.0)+8)*x_multiplier;
+      PONG->vel_y = -4+PONG->y-PADDLE->y;
+    }
+    else if(side == -1 && PONG->x>PADDLE->x)
+    {
+      if(winner == -1)
+      {
+        GameOver(winner);
+      }
+      PONG->x = PADDLE->x;
+      PONG->vel_x = -((rand()%20/10.0)+8)*x_multiplier;
+      PONG->vel_y = -5+PONG->y-PADDLE->y;
+    }
   }
 }
 
