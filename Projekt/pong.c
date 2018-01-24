@@ -234,7 +234,7 @@ void ai_controll(_pong_* PONG, _paddle_* PADDLE_AI)
 void draw_UI(void)
 {
   char* line_to_print;
-  if(Opponent_points >= 11 && (Opponent_points-Player_points) >= 2)
+  if(opponent_points >= 11 && (opponent_points-player_points) >= 2)
   {
     isPlay = 0;
     isEnd = 1;
@@ -244,7 +244,7 @@ void draw_UI(void)
     line_to_print = "Przycisnij spacje by zagrac ponownie";
     mvprintw((int)TABLE.max_y/2,(int)(TABLE.max_x/2)-(int)(strlen(line_to_print)/2),"%s",line_to_print);
   }
-  else if(Player_points >= 11 && (Player_points-Opponent_points) >= 2)
+  else if(player_points >= 11 && (player_points-opponent_points) >= 2)
   {
     isPlay = 0;
     isEnd = 1;
@@ -272,8 +272,8 @@ void draw_UI(void)
   mvprintw(1,(int)(TABLE.max_x/2)-(int)(strlen(line_to_print)/2),"%s",line_to_print);
   line_to_print = "|   |_| | \\| |_|";
   mvprintw(2,(int)(TABLE.max_x/2)-(int)(strlen(line_to_print)/2),"%s",line_to_print);
-  mvprintw(TABLE.max_y/2-6,TABLE.max_x/2-20,"%d",Player_points);
-  mvprintw(TABLE.max_y/2-6,TABLE.max_x/2+20,"%d",Opponent_points);
+  mvprintw(TABLE.max_y/2-6,TABLE.max_x/2-20,"%d",player_points);
+  mvprintw(TABLE.max_y/2-6,TABLE.max_x/2+20,"%d",opponent_points);
 }
 
 void GameOver(int winner)
@@ -283,11 +283,11 @@ void GameOver(int winner)
   PADDLE_AI.y = rand()%5+11;
   if(winner == -1)
   {
-    ++Opponent_points;
+    ++opponent_points;
   }
   else if(winner == 1)
   {
-    ++Player_points;
+    ++player_points;
   }
 }
 
@@ -318,8 +318,8 @@ int* check_keys(void)
     isPlay = 1;
     if(isEnd)
     {
-      Player_points = 0;
-      Opponent_points = 0;
+      player_points = 0;
+      opponent_points = 0;
       isEnd = 0;
     }
   }
