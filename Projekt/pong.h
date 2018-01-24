@@ -48,8 +48,8 @@ extern _table_ TABLE;
 int isPlay;
 int winner;
 int round_counter;
-int Player_points;
-int Opponent_points;
+int player_points;
+int opponent_points;
 int isEnd;
 
 void Initialise(void);
