@@ -14,8 +14,8 @@ void Start()
   isEnd = 0;
   round_counter = 0;
   winner = -1;
-  Player_points = 0;
-  Opponent_points = 0;
+  player_points = 0;
+  opponent_points = 0;
 }
 
 void FixedUpdate()
