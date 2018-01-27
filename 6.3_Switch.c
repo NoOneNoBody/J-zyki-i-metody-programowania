@@ -48,7 +48,7 @@ void Sortuj(int tablica[],int posortowana[])
 
 void MinMax(int tablica[])
 {
-  int min=tablica[0];
+  int min = tablica[0];
   int max = tablica[0];
   for(int i=1;i<10;++i)
   {
