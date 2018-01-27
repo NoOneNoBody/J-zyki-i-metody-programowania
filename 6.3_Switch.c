@@ -5,7 +5,6 @@
 
 void Losuj(int tablica[])
 {
-  srand(time(NULL));
   for(int i=0;i<10;++i)
   {
     tablica[i]=rand()%100;
@@ -108,6 +107,7 @@ void MenuWyboru(int tablica[], int tablica_posortowana[], int* koniec)
 
 int main(void)
 {
+  srand(time(NULL));
   int koniec = 1;
   int tablica [10];
   Losuj(tablica);
