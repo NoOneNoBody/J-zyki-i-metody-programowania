@@ -3,13 +3,10 @@
 
 int main(void)
 {
-  int i = 0;
-  do
+  for(int i=0;i<=255;++i)
   {
     printf("%d %c \n",i,i);
-    ++i;
   }
-  while(i<=255);
   
   return 0;
 }
