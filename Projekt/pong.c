@@ -206,8 +206,8 @@ void draw_table(_table_* TABLE)
         mvprintw(TABLE->max_y-j,i,"|");
       }
     }
-  mvprintw(TABLE->max_y+1,TABLE->max_x-i,"\u2588");
-  mvprintw(8,i,"\u2588");
+    mvprintw(TABLE->max_y+1,TABLE->max_x-i,"\u2588");
+    mvprintw(8,i,"\u2588");
   }
 }
 
