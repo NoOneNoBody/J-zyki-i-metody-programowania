@@ -16,19 +16,16 @@ void Wypisz_dane(int ilosc,int dane[])
 void Wypisz_tekst_pobierz_dane(char tekst[])
 {
   int ilosc=0;
-  int i=0;
-  while(tekst[i] != '\0')
+  for(int i=0;tekst[i] != '\0';++i)
   {
     if(tekst[i] == '%' && tekst[i+1] == 'd')
     {
       ++ilosc;
     }
-    ++i;
   }
   int dane[ilosc];
   ilosc=0;
-  i=0;
-  while(tekst[i] != '\0')
+  for(int i=0;tekst[i] != '\0';++i)
   {
     if(tekst[i] == '%' && tekst[i+1] == 'd')
     {
@@ -38,14 +35,13 @@ void Wypisz_tekst_pobierz_dane(char tekst[])
       continue;
     }
     printf("%c",tekst[i]);
-    ++i;
   }
   Wypisz_dane(ilosc, dane);
 }
 
 int main(void)
 {
-  char tekst[] = "Zmienna 1: %d \ndruga zmienna: %d \ntrzecia: %d\n";
+  const char tekst[] = "Zmienna 1: %d \ndruga zmienna: %d \ntrzecia: %d\n";
   Wypisz_tekst_pobierz_dane(tekst);
   
   return 0;
