@@ -7,7 +7,7 @@ void Losuj(int tablica[])
 {
   for(int i=0;i<10;++i)
   {
-    tablica[i]=rand()%100;
+    tablica[i] = rand()%100;
   }
 }
 
@@ -39,7 +39,7 @@ void Sortuj(int tablica[],int posortowana[])
     while(j>0 && posortowana[j]<posortowana[j-1])
     {
       int tymczasowy = posortowana[j-1];
-      posortowana[j-1]= posortowana[j];
+      posortowana[j-1] = posortowana[j];
       posortowana[j] = tymczasowy;
       --j;
     }
@@ -67,7 +67,12 @@ void MinMax(int tablica[])
 void MenuWyboru(int tablica[], int tablica_posortowana[], int* koniec)
 {
   int wybor = 0;
-  printf("1.Losuj tablice\n2.Wyswietl\n3.Srednia\n4.Mediana\n5.Minimalna i maksymalna wartosc\n6.Wyjdz\n");
+  printf("1.Losuj tablice\n"
+         "2.Wyswietl\n"
+         "3.Srednia\n"
+         "4.Mediana\n"
+         "5.Minimalna i maksymalna wartosc\n"
+         "6.Wyjdz\n");
   scanf("%d",&wybor);
   switch(wybor)
   {
