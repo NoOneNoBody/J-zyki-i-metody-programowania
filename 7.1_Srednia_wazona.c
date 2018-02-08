@@ -7,6 +7,7 @@ double Srednia_wazona(int *poczatek, int *koniec)
   int ilosc = 0;
   int suma = 0;
   for(int i=0;poczatek+i<=koniec;++i)
+  {
     int wartosc = *(poczatek+i);
     suma += wartosc*(i);
     ilosc += i;
