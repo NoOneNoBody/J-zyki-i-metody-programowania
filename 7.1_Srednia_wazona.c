@@ -19,12 +19,13 @@ double Srednia_wazona(int *poczatek, int *koniec)
 int main(void)
 {
   int tab[6];
-  for(int i=0;i<6;++i)
+  int rozmiar = sizeof(tab)/sizeof(tab[0]);
+  for(int i=0;i<rozmiar;++i)
   {
     printf("Podaj liczbe nr %d: ",(i+1));
     scanf("%d",&tab[i]);
   }
-  double srednia = Srednia_wazona(&tab[0],&tab[5]);
+  double srednia = Srednia_wazona(&tab[0],&tab[rozmiar-1]);
   printf("Srednia wazona liczb to: %lf\n",srednia);
   
   return 0;
