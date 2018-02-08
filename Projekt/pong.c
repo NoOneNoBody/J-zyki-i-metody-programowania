@@ -45,6 +45,9 @@ void net_collision(_pong_* PONG, _table_* TABLE);
 void table_collision(_pong_* PONG, _table_* TABLE);
 void ai_controll(_pong_* PONG, _paddle_* PADDLE_AI);
 
+const char* block_char = "\u2588";
+const char pong_char = 'o';
+
 void Initialise(void)
 {
   setlocale(LC_ALL, "");
@@ -64,8 +67,10 @@ void GamePhysics(_pong_* PONG, _paddle_* PADDLE, _paddle_* PADDLE_AI, _table_* T
   net_collision(PONG, TABLE);
   table_collision(PONG, TABLE);
   pong_physics(PONG);
+  
   paddle_movement(PADDLE);
   ai_controll(PONG, PADDLE_AI);
+  
   PONG->x += PONG->vel_x*SPEED;
   PONG->y += PONG->vel_y*SPEED;
   PONG->acc_x *= 0;
@@ -158,8 +163,8 @@ void paddle_collision(_paddle_* PADDLE, _pong_* PONG, int side)
         GameOver(winner);
       }
       PONG->x = PADDLE->x;
-      PONG->vel_x = ((rand()%20/10.0)+8)*x_multiplier;
-      PONG->vel_y = -4+PONG->y-PADDLE->y;
+      PONG->vel_x = ((rand()%20/10.0)+7)*x_multiplier;
+      PONG->vel_y = -5+PONG->y-PADDLE->y;
     }
     else if(side == -1 && PONG->x>PADDLE->x)
     {
@@ -168,7 +173,7 @@ void paddle_collision(_paddle_* PADDLE, _pong_* PONG, int side)
         GameOver(winner);
       }
       PONG->x = PADDLE->x;
-      PONG->vel_x = -((rand()%20/10.0)+8)*x_multiplier;
+      PONG->vel_x = -((rand()%20/10.0)+7)*x_multiplier;
       PONG->vel_y = -5+PONG->y-PADDLE->y;
     }
   }
@@ -176,7 +181,7 @@ void paddle_collision(_paddle_* PADDLE, _pong_* PONG, int side)
 
 void draw_pong(_pong_* PONG)
 {
-  mvprintw((int)PONG->y,(int)PONG->x,"o");
+  mvprintw((int)PONG->y,(int)PONG->x,"%c",pong_char);
 }
 
 void draw_paddle(_paddle_* PADDLE)
@@ -206,8 +211,9 @@ void draw_table(_table_* TABLE)
         mvprintw(TABLE->max_y-j,i,"|");
       }
     }
-    mvprintw(TABLE->max_y+1,TABLE->max_x-i,"\u2588");
-    mvprintw(8,i,"\u2588");
+	
+    mvprintw(TABLE->max_y+1,TABLE->max_x-i,"%s",block_char);
+    mvprintw(8,i,"%s",block_char);
   }
 }
 
@@ -234,13 +240,16 @@ void ai_controll(_pong_* PONG, _paddle_* PADDLE_AI)
 void draw_UI(void)
 {
   char* line_to_print;
+  
   if(opponent_points >= 11 && (opponent_points-player_points) >= 2)
   {
     isPlay = 0;
     isEnd = 1;
     round_counter = 0;
+	
     line_to_print = "Przegrales";
     mvprintw(5,(int)(TABLE.max_x/2)-(int)(strlen(line_to_print)/2),"%s",line_to_print);
+	
     line_to_print = "Przycisnij spacje by zagrac ponownie";
     mvprintw((int)TABLE.max_y/2,(int)(TABLE.max_x/2)-(int)(strlen(line_to_print)/2),"%s",line_to_print);
   }
@@ -249,8 +258,10 @@ void draw_UI(void)
     isPlay = 0;
     isEnd = 1;
     round_counter = 0;
+	
     line_to_print = "Wygrales";
     mvprintw(5,(int)(TABLE.max_x/2)-(int)(strlen(line_to_print)/2),"%s",line_to_print);
+	
     line_to_print = "Przycisnij spacje by zagrac ponownie";
     mvprintw((int)TABLE.max_y/2,(int)(TABLE.max_x/2)-(int)(strlen(line_to_print)/2),"%s",line_to_print);
   }
@@ -266,12 +277,14 @@ void draw_UI(void)
     }
     mvprintw((int)TABLE.max_y/2,(int)(TABLE.max_x/2)-(int)(strlen(line_to_print)/2),"%s",line_to_print);
   }
+  
   line_to_print = " _   _        _ ";
   mvprintw(0,(int)(TABLE.max_x/2)-(int)(strlen(line_to_print)/2),"%s",line_to_print);
   line_to_print = "|_| | | |\\ | |  ";
   mvprintw(1,(int)(TABLE.max_x/2)-(int)(strlen(line_to_print)/2),"%s",line_to_print);
   line_to_print = "|   |_| | \\| |_|";
   mvprintw(2,(int)(TABLE.max_x/2)-(int)(strlen(line_to_print)/2),"%s",line_to_print);
+  
   mvprintw(TABLE.max_y/2-6,TABLE.max_x/2-20,"%d",player_points);
   mvprintw(TABLE.max_y/2-6,TABLE.max_x/2+20,"%d",opponent_points);
 }

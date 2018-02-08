@@ -55,12 +55,26 @@ void Update()
   check_keys();
 }
 
+int CheckDeltaTime(double* delta, double* last_time, double* current_time, struct timespec* tstart)
+{
+  clock_gettime(CLOCK_MONOTONIC, tstart);
+  *current_time = ((double)(*tstart).tv_sec + 1.0e-9*(*tstart).tv_nsec);
+  *delta = *current_time - *last_time;
+  if(*delta > DELAY)
+  {
+    *last_time = *current_time;
+	return 1;
+  }
+  return 0;
+}
+
 void RunGame(int argc, char **argv)
 {
   struct timespec tstart={0,0};
   clock_gettime(CLOCK_MONOTONIC, &tstart);
   double delta = 0;
   double last_time = ((double)tstart.tv_sec + 1.0e-9*tstart.tv_nsec);
+  double current_time = last_time;
   
   if(argc>1)
   {
@@ -73,14 +87,10 @@ void RunGame(int argc, char **argv)
   Start();
   while(1)
   {
-    clock_gettime(CLOCK_MONOTONIC, &tstart);
-    double current_time = ((double)tstart.tv_sec + 1.0e-9*tstart.tv_nsec);
-    delta = current_time - last_time;
     clear();
     Update();
-    if(delta > DELAY)
+    if(CheckDeltaTime(&delta, &last_time, &current_time, &tstart))
     {
-      last_time = current_time;
       FixedUpdate();
     }
     refresh();
