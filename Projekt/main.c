@@ -63,7 +63,7 @@ int CheckDeltaTime(double* delta, double* last_time, double* current_time, struc
   if(*delta > DELAY)
   {
     *last_time = *current_time;
-	return 1;
+    return 1;
   }
   return 0;
 }
