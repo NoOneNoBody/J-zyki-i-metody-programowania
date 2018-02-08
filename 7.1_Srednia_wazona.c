@@ -13,7 +13,7 @@ double Srednia_wazona(int *poczatek, int *koniec)
     ilosc += i;
     ++i;
   }while(poczatek+i<=koniec);
-  return (suma/ilosc);
+  return (suma/(double)ilosc);
 }
 
 int main(void)
