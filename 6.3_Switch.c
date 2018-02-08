@@ -27,7 +27,7 @@ void Srednia(int tablica[], int rozmiar)
   {
     suma += tablica[i];
   }
-  printf("Srednia liczb: %f\n",(suma/10.0));
+  printf("Srednia liczb: %f\n",(suma/(double)rozmiar));
 }
 
 void Sortuj(int tablica[],int posortowana[], int rozmiar)
