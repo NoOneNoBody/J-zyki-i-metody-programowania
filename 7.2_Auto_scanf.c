@@ -13,7 +13,7 @@ void Wypisz_dane(int ilosc,int dane[])
   printf("\n");
 }
 
-void Wypisz_tekst_pobierz_dane(char tekst[])
+void Wypisz_tekst_pobierz_dane(const char tekst[])
 {
   int ilosc=0;
   for(int i=0;tekst[i] != '\0';++i)
