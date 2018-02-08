@@ -3,23 +3,23 @@
 #include <stdlib.h>
 #include<time.h>
 
-void Losuj(int tablica[])
+void Losuj(int tablica[], int rozmiar)
 {
   srand(time(NULL));
-  for(int i=0;i<10;++i)
+  for(int i=0;i<rozmiar;++i)
   {
-    tablica[i]=rand()%100;
+    tablica[i] = rand()%100;
   }
 }
 
-void Sortowanie(int *wskazniki[])
+void Sortowanie(int *wskazniki[], int rozmiar)
 {
-  int sorted=0;
+  int sorted = 0;
   int *tmp;
-  for(int i=0;i<10;++i)
+  for(int i=0;i<rozmiar;++i)
   {
-    sorted=1;
-    for(int j=0;j<9-i;++j)
+    sorted = 1;
+    for(int j=0;j<rozmiar-1-i;++j)
     {
       if(*wskazniki[j]>*wskazniki[j+1])
       {
@@ -36,27 +36,27 @@ void Sortowanie(int *wskazniki[])
   }
 }
 
-void Wyswietl(int tablica[])
+void Wyswietl(int tablica[], int rozmiar)
 {
-  for(int i=0;i<10;++i)
+  for(int i=0;i<rozmiar;++i)
   {
     printf("%d ",tablica[i]);
   }
   printf("\n");
 }
 
-void Wyswietl_wskazniki(int *wskazniki[])
+void Wyswietl_wskazniki(int *wskazniki[], int rozmiar)
 {
-  for(int i=0;i<10;++i)
+  for(int i=0;i<rozmiar;++i)
   {
     printf("%d ",*wskazniki[i]);
   }
   printf("\n");
 }
 
-void Kopiuj_wskazniki(int tablica[], int *wskazniki[])
+void Kopiuj_wskazniki(int tablica[], int *wskazniki[], int rozmiar)
 {
-  for(int i=0;i<10;++i)
+  for(int i=0;i<rozmiar;++i)
   {
     wskazniki[i] = &tablica[i];
   }
@@ -65,16 +65,17 @@ void Kopiuj_wskazniki(int tablica[], int *wskazniki[])
 int main(void)
 {
   int tablica[10];
-  Losuj(tablica);
+  int rozmiar = sizeof(tablica)/sizeof(tablica[0]);
+  Losuj(tablica, rozmiar);
   int *wskazniki[10];
-  Kopiuj_wskazniki(tablica,wskazniki);
+  Kopiuj_wskazniki(tablica, wskazniki, rozmiar);
   printf("Wylosowana tablica:\n");
-  Wyswietl(tablica);
-  Sortowanie(wskazniki);
+  Wyswietl(tablica, rozmiar);
+  Sortowanie(wskazniki, rozmiar);
   printf("Posortowana tablica wskaznikow:\n");
-  Wyswietl_wskazniki(wskazniki);
+  Wyswietl_wskazniki(wskazniki, rozmiar);
   printf("Nienaruszona oryginalna tablica:\n");
-  Wyswietl(tablica);
+  Wyswietl(tablica, rozmiar);
 
   return 0;
 }
