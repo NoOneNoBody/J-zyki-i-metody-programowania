@@ -4,7 +4,7 @@ Liczenie wyznacznika macierzy */
 #include <time.h>
 #include <stdlib.h>
 
-int Wyznacznik_macierzy(int macierz[3][3])
+int Wyznacznik_macierzy(int macierz[][], int rozmiar)
 {
   int wyznacznik = 0;
   int iloczyn = 1;
@@ -24,7 +24,7 @@ int Wyznacznik_macierzy(int macierz[3][3])
     iloczyn = 1;
     for(int j=0;j<rozmiar;j++)
     {
-      iloczyn *= macierz[j][(((rozmiar*2)-1)-(j+i))%rozmiar];
+      iloczyn *= macierz[j][(5-(j+i))%rozmiar];
     }
     wyznacznik -= iloczyn;
   }
