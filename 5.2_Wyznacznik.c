@@ -49,7 +49,7 @@ int main(void)
 {
   int macierz[3][3];
   const int rozmiar = sizeof(macierz)/sizeof(macierz[0]);
-  Losowanie_macierzy(macierz, rozmiar);
+  Losowanie_macierzy(rozmiar, macierz);
   int wyznacznik = Wyznacznik_macierzy_3na3(macierz);
   printf("Wyznacznik wynosi %d\n",wyznacznik);
   return 0;
