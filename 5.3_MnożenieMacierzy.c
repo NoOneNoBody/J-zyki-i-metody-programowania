@@ -4,18 +4,18 @@ Mnożenie macierzy */
 #include <time.h>
 #include <stdlib.h>
 
-void Mnorzenie_macierzy_2na2(int macierz[2][2][2], int wynik[2][2])
+void Mnorzenie_macierzy(const int rozmiar,int macierz[rozmiar][rozmiar][rozmiar], int wynik[rozmiar][rozmiar])
 {
-  for(int i=0;i<2;i++)
+  for(int i=0;i<rozmiar;i++)
   {
-    for(int j=0;j<2;j++)
+    for(int j=0;j<rozmiar;j++)
     {
       wynik[i][j] = macierz[i][0][0]*macierz[0][j][1]+macierz[i][1][0]*macierz[1][j][1];
     }	
   }
 }
 
-void Generuj_macierz(int macierz[2][2], int rozmiar)
+void Generuj_macierz(const int rozmiar, int macierz[rozmiar][rozmiar])
 {
   for(int i=0;i<rozmiar;i++)
   {
@@ -29,13 +29,13 @@ void Generuj_macierz(int macierz[2][2], int rozmiar)
   printf("\n");
 }
 
-void Laczenie_macierzy_2na2(int macierzA[2][2], int macierzB[2][2], int macierz_polaczona[2][2][2])
+void Laczenie_macierzy(const int rozmiar, int macierzA[rozmiar][rozmiar], int macierzB[rozmiar][rozmiar], int macierz_polaczona[rozmiar][rozmiar][rozmiar])
 {
-  for(int i=0;i<2;i++)
+  for(int i=0;i<rozmiar;i++)
   {
-    for(int j=0;j<2;j++)
+    for(int j=0;j<rozmiar;j++)
     {
-      for(int k=0;k<2;k++)
+      for(int k=0;k<rozmiar;k++)
       {
         if(k == 0)
         {
@@ -62,13 +62,13 @@ int main(void)
   int macierz2[2][2];
   int macierz_polaczona[2][2][2];
   int wynik[2][2];
-  const int rozmiar = 2;
+  const int rozmiar = sizeof(macierz1)/sizeof(macierz1[0]);
   printf("Pierwsza macierz:\n");
-  Generuj_macierz(macierz1,rozmiar);
+  Generuj_macierz(rozmiar,macierz1);
   printf("Druga macierz:\n");
-  Generuj_macierz(macierz2,rozmiar);
-  Laczenie_macierzy_2na2(macierz1,macierz2,macierz_polaczona);
-  Mnorzenie_macierzy_2na2(macierz_polaczona, wynik);
+  Generuj_macierz(rozmiar,macierz2);
+  Laczenie_macierzy(rozmiar,macierz1,macierz2,macierz_polaczona);
+  Mnorzenie_macierzy(rozmiar,macierz_polaczona,wynik);
   printf("Wynikowa macierz:\n");
   Wyswietl_macierz_2na2(wynik);
   return 0;
