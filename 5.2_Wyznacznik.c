@@ -9,34 +9,34 @@ int Wyznacznik_macierzy(int macierz[3][3])
   int wyznacznik = 0;
   int iloczyn = 1;
 
-  for(int i=0;i<3;i++)
+  for(int i=0;i<rozmiar;i++)
   {
     iloczyn = 1;
-    for(int j=0;j<3;j++)
+    for(int j=0;j<rozmiar;j++)
     {
-      iloczyn *= macierz[j][(j+i)%3];
+      iloczyn *= macierz[j][(j+i)%rozmiar];
     }
     wyznacznik += iloczyn;
   }
 
-  for(int i=0;i<3;i++)
+  for(int i=0;i<rozmiar;i++)
   {
     iloczyn = 1;
-    for(int j=0;j<3;j++)
+    for(int j=0;j<rozmiar;j++)
     {
-      iloczyn *= macierz[j][(5-(j+i))%3];
+      iloczyn *= macierz[j][(((rozmiar*2)-1)-(j+i))%rozmiar];
     }
     wyznacznik -= iloczyn;
   }
   return wyznacznik;
 }
 
-void Losowanie_macierzy(int macierz[3][3])
+void Losowanie_macierzy(int macierz[][], int rozmiar)
 {
   srand(time(NULL));
-  for(int i=0;i<3;i++)
+  for(int i=0;i<rozmiar;i++)
   {
-    for(int j=0;j<3;j++)
+    for(int j=0;j<rozmiar;j++)
     {
       macierz[i][j] = rand() % 11;
       printf("%2d ",macierz[i][j]);
@@ -48,8 +48,9 @@ void Losowanie_macierzy(int macierz[3][3])
 int main(void)
 {
   int macierz[3][3];
-  Losowanie_macierzy(macierz);
-  int wyznacznik = Wyznacznik_macierzy(macierz);
+  const int rozmiar = 3;
+  Losowanie_macierzy(macierz, rozmiar);
+  int wyznacznik = Wyznacznik_macierzy(macierz, rozmiar);
   printf("Wyznacznik wynosi %d\n",wyznacznik);
   return 0;
 }
