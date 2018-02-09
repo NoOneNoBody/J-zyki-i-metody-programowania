@@ -2,19 +2,13 @@
 Obliczanie pól i obwodów */
 #include<stdio.h>
 #include<math.h>
+
 #define M_PI 3.14159265358979323846
 
 
 int SprawdzCzyPoprawneBokiTrojkata(double bokA, double bokB, double bokC)
 {
-  if(bokA > 0 && bokB > 0 && bokC > 0 && bokA+bokB > bokC && bokA+bokC > bokB && bokB+bokC > bokA)
-  {
-    return 1;  
-  }
-  else
-  {
-    return 0;  
-  }
+  return(bokA > 0 && bokB > 0 && bokC > 0 && bokA+bokB > bokC && bokA+bokC > bokB && bokB+bokC > bokA);
 }
 double PoleTrojkata(double bokA, double bokB, double bokC)
 {
@@ -70,7 +64,7 @@ void WczytanieTrojkata(void)
   if(!SprawdzCzyPoprawneBokiTrojkata(trojkatBokA, trojkatBokB, trojkatBokC))
   {
     printf("Podano niewłaściwe dane\n");
-	return;
+    return;
   }
   int wybor=0;
   printf("Chcesz policzyć:\n1. Pole\n2. Obwód\n");
@@ -79,15 +73,15 @@ void WczytanieTrojkata(void)
   {
     case 1:
     {
-	  double pole = PoleTrojkata(trojkatBokA,trojkatBokB,trojkatBokC);
-	  if(pole > 0)
-	  {
+      double pole = PoleTrojkata(trojkatBokA,trojkatBokB,trojkatBokC);
+      if(pole > 0)
+      {
         printf("Pole trójkąta wynosi: %f\n",pole);
-	  }
-	  else
-	  {
-	    printf("Podano niewłaściwe dane\n");
-	  }
+      }
+      else
+      {
+        printf("Podano niewłaściwe dane\n");
+      }
       break;
     }
     case 2:
@@ -99,7 +93,7 @@ void WczytanieTrojkata(void)
     {
       printf("Zły numer\n");
       break;
-	}
+    }
   }
 }
 
@@ -114,7 +108,7 @@ void WczytanieProstokata(void)
   if(prostokatBokA <= 0 || prostokatBokB <= 0)
   {
     printf("Podano niewłaściwe dane\n");
-	return;
+    return;
   }
   int wybor=0;
   printf("Chcesz policzyć:\n1. Pole\n2. Obwód\n");
@@ -134,7 +128,7 @@ void WczytanieProstokata(void)
     default:
     {
       printf("Zły numer\n");
-	  break;
+      break;
     }
   }
 }
@@ -147,7 +141,7 @@ void WczytanieKwadratu(void)
   if(kwadratBok <= 0)
   {
     printf("Podano niewłaściwe dane\n");
-	return;
+    return;
   }
   int wybor=0;
   printf("Chcesz policzyć:\n1. Pole\n2. Obwód\n");
@@ -180,7 +174,7 @@ void WczytywanieKola(void)
   if(koloPromien <= 0)
   {
     printf("Podano niewłaściwe dane\n");
-	return;
+    return;
   }
   int wybor=0;
   printf("Chcesz policzyć:\n1. Pole\n2. Obwód\n");
@@ -201,7 +195,7 @@ void WczytywanieKola(void)
     {
       printf("Zły numer\n");
       break;
-	}
+    }
   }
 }
 
@@ -214,9 +208,9 @@ int main(void)
   {
     case 1:
     {
-	  WczytanieTrojkata();
-	  break;
-	}
+      WczytanieTrojkata();
+      break;
+    }
     case 2:
     {
       WczytanieProstokata();
@@ -236,5 +230,6 @@ int main(void)
       printf("Zły numer\n");
       break;
   }
+  
   return 0;
 }
