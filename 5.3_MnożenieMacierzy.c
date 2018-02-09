@@ -4,7 +4,7 @@ Mnożenie macierzy */
 #include <time.h>
 #include <stdlib.h>
 
-void Mnorzenie_macierzy(int macierz[2][2][2], int wynik[2][2])
+void Mnorzenie_macierzy_2na2(int macierz[2][2][2], int wynik[2][2])
 {
   for(int i=0;i<2;i++)
   {
@@ -15,11 +15,11 @@ void Mnorzenie_macierzy(int macierz[2][2][2], int wynik[2][2])
   }
 }
 
-void Generuj_macierz(int macierz[2][2])
+void Generuj_macierz(int macierz[2][2], int rozmiar)
 {
-  for(int i=0;i<2;i++)
+  for(int i=0;i<rozmiar;i++)
   {
-    for(int j=0;j<2;j++)
+    for(int j=0;j<rozmiar;j++)
     {
       macierz[i][j] = (rand() % 201)-100;
       printf("%4d ",macierz[i][j]);
@@ -29,7 +29,7 @@ void Generuj_macierz(int macierz[2][2])
   printf("\n");
 }
 
-void Laczenie_macierzy(int macierzA[2][2], int macierzB[2][2], int macierz_polaczona[2][2][2])
+void Laczenie_macierzy_2na2(int macierzA[2][2], int macierzB[2][2], int macierz_polaczona[2][2][2])
 {
   for(int i=0;i<2;i++)
   {
@@ -50,7 +50,7 @@ void Laczenie_macierzy(int macierzA[2][2], int macierzB[2][2], int macierz_polac
   }
 }
 
-void Wyswietl_macierz(int macierz[2][2])
+void Wyswietl_macierz_2na2(int macierz[2][2])
 {
   printf("%6d %6d\n%6d %6d\n", macierz[0][0], macierz[0][1], macierz[1][0], macierz[1][1]);
 }
@@ -62,13 +62,14 @@ int main(void)
   int macierz2[2][2];
   int macierz_polaczona[2][2][2];
   int wynik[2][2];
+  const int rozmiar = 2;
   printf("Pierwsza macierz:\n");
-  Generuj_macierz(macierz1);
+  Generuj_macierz(macierz1,rozmiar);
   printf("Druga macierz:\n");
-  Generuj_macierz(macierz2);
-  Laczenie_macierzy(macierz1,macierz2,macierz_polaczona);
-  Mnorzenie_macierzy(macierz_polaczona, wynik);
+  Generuj_macierz(macierz2,rozmiar);
+  Laczenie_macierzy_2na2(macierz1,macierz2,macierz_polaczona);
+  Mnorzenie_macierzy_2na2(macierz_polaczona, wynik);
   printf("Wynikowa macierz:\n");
-  Wyswietl_macierz(wynik);
+  Wyswietl_macierz_2na2(wynik);
   return 0;
 }
