@@ -29,7 +29,7 @@ int Zapytaj_o_czas(char* nazwa_jednostki, char* nazwa_numeru, int max)
   return czas;
 }
 
-void Wczytaj_czas(int czas[3], char* nazwa)
+void Wczytaj_czas(int czas[3], const char* nazwa)
 {
   czas[0] = Zapytaj_o_czas("godziny",nazwa,24);
   czas[1] = Zapytaj_o_czas("minuty",nazwa,60);
