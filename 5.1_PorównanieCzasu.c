@@ -4,7 +4,8 @@ Porównyanie czasu */
 
 int Porownaj_czas(int pierwszy_czas[3], int drugi_czas[3])
 {
-  for(int i=0;i<3;i++)
+  const int ilosc_elementow_czasu = 3;
+  for(int i=0;i<ilosc_elementow_czasu;i++)
   {
     if(pierwszy_czas[i] > drugi_czas[i])
     {
@@ -36,6 +37,22 @@ void Wczytaj_czas(int czas[3])
   czas[2] = Zapytaj_o_czas("sekundy","pierwszego",60);
 }
 
+void Wypisz_wynik(int pierwszy_czas[3], int drugi_czas[3], int wynik)
+{
+  switch(wynik)
+  {
+    case -1:
+      printf("Czas %d2:%d2:%d2 jest wiekszy niż %d2:%d2:%d2\n",pierwszy_czas[0],pierwszy_czas[1],pierwszy_czas[2],drugi_czas[0],drugi_czas[1],drugi_czas[2]);
+      break;
+    case 0:
+      printf("Czas %d2:%d2:%d2 jest równy %d2:%d2:%d2\n",pierwszy_czas[0],pierwszy_czas[1],pierwszy_czas[2],drugi_czas[0],drugi_czas[1],drugi_czas[2]);
+      break;
+    case 1:
+      printf("Czas %d2:%d2:%d2 jest wiekszy niż %d2:%d2:%d2\n",drugi_czas[0],drugi_czas[1],drugi_czas[2],pierwszy_czas[0],pierwszy_czas[1],pierwszy_czas[2]);
+      break;
+  }
+}
+
 int main(void)
 {
   int pierwszy_czas[3];
@@ -43,6 +60,6 @@ int main(void)
   Wczytaj_czas(pierwszy_czas);
   Wczytaj_czas(drugi_czas);
   int wynik = Porownaj_czas(pierwszy_czas,drugi_czas);
-  printf("%d\n",wynik);
+  Wypisz_wynik(pierwszy_czas,drugi_czas,wynik);
   return 0;
 }
