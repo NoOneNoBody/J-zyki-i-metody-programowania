@@ -61,5 +61,6 @@ int main(void)
   Wczytaj_czas(drugi_czas);
   int wynik = Porownaj_czas(pierwszy_czas,drugi_czas);
   Wypisz_wynik(pierwszy_czas,drugi_czas,wynik);
+  
   return 0;
 }
