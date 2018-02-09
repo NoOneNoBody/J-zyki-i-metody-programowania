@@ -2,9 +2,8 @@
 Porównyanie czasu */
 #include<stdio.h>
 
-int Porownaj_czas(int pierwszy_czas[3], int drugi_czas[3])
+int Porownaj_czas(const int ilosc_elementow_czasu, int pierwszy_czas[ilosc_elementow_czasu], int drugi_czas[ilosc_elementow_czasu])
 {
-  const int ilosc_elementow_czasu = 3;
   for(int i=0;i<ilosc_elementow_czasu;i++)
   {
     if(pierwszy_czas[i] > drugi_czas[i])
@@ -59,7 +58,7 @@ int main(void)
   int drugi_czas[3];
   Wczytaj_czas(pierwszy_czas,"pierwszego");
   Wczytaj_czas(drugi_czas,"drugiego");
-  int wynik = Porownaj_czas(pierwszy_czas,drugi_czas);
+  int wynik = Porownaj_czas(3,pierwszy_czas,drugi_czas);
   Wypisz_wynik(pierwszy_czas,drugi_czas,wynik);
   
   return 0;
