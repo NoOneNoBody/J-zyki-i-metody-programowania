@@ -31,7 +31,7 @@ int Wyznacznik_macierzy_3na3(int macierz[3][3])
   return wyznacznik;
 }
 
-void Losowanie_macierzy(int macierz[3][3], int rozmiar)
+void Losowanie_macierzy(const int rozmiar, int macierz[rozmiar][rozmiar])
 {
   srand(time(NULL));
   for(int i=0;i<rozmiar;i++)
@@ -48,7 +48,7 @@ void Losowanie_macierzy(int macierz[3][3], int rozmiar)
 int main(void)
 {
   int macierz[3][3];
-  const int rozmiar = 3;
+  const int rozmiar = sizeof(macierz)/sizeof(macierz[0]);
   Losowanie_macierzy(macierz, rozmiar);
   int wyznacznik = Wyznacznik_macierzy_3na3(macierz);
   printf("Wyznacznik wynosi %d\n",wyznacznik);
