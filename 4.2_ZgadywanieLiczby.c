@@ -5,17 +5,20 @@ Zadanie zgadywanie liczby */
 
 int wczytaj_liczbe_calkowita(void)
 {
+  const int zakresOd = 1;
+  const int zakresDo = 10;
+  
   int liczba = 0;
   do
   {
-    printf("Podaj liczbę całkowitą od 1 do 10: ");
+    printf("Podaj liczbę całkowitą od %d do %d: ",zakresOd,zakresDo);
     scanf("%d", &liczba);
-    if(liczba < 1 || liczba > 10)
+    if(liczba < zakresOd || liczba > zakresDo)
     {
       printf("Wybrano nie właściwą liczbę!\n");
     }
   }
-  while (liczba < 1 || liczba > 10);
+  while (liczba < zakresOd || liczba > zakresDo);
   return liczba;
 }
 
