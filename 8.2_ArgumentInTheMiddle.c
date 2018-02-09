@@ -67,7 +67,7 @@ void printChar(char value)
   printf("%c",value);
 }
 
-int checkLength(void* argument, enum ArgumentType type)
+int checkLength(const void* argument, enum ArgumentType type)
 {
   int length = 0;
   switch(type)
@@ -103,7 +103,7 @@ int checkLength(void* argument, enum ArgumentType type)
   return length;
 }
 
-void printArgument(void* argument, enum ArgumentType type)
+void printArgument(const void* argument, enum ArgumentType type)
 {
   switch(type)
   {
@@ -133,7 +133,7 @@ void printArgument(void* argument, enum ArgumentType type)
   }
 }
 
-int printArgumentInTheMiddle(void* argument, enum ArgumentType type, unsigned width)
+int printArgumentInTheMiddle(const void* argument, enum ArgumentType type, unsigned width)
 {
   int startPosition = 0;
   int length = checkLength(argument,type);
@@ -151,10 +151,10 @@ int printArgumentInTheMiddle(void* argument, enum ArgumentType type, unsigned wi
 
 int main(void)
 {
-  int a = 1234;
-  double b = 32115.124;
-  char *text = "Ala ma kota";
-  char character = 'A';
+  const int a = 1234;
+  const double b = 32115.124;
+  const char *text = "Ala ma kota";
+  const char character = 'A';
   printArgumentInTheMiddle(&a,INT,20);
   printArgumentInTheMiddle(&b,DOUBLE,20);
   printArgumentInTheMiddle(text,STRING,20);
