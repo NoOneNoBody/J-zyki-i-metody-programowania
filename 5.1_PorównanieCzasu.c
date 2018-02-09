@@ -18,7 +18,7 @@ int Porownaj_czas(const int ilosc_elementow_czasu, int pierwszy_czas[ilosc_eleme
   return 0;
 }
 
-int Zapytaj_o_czas(char* nazwa_jednostki, char* nazwa_numeru, int max)
+int Zapytaj_o_czas(const char* nazwa_jednostki, const char* nazwa_numeru, int max)
 {
   int czas = max;
   do
