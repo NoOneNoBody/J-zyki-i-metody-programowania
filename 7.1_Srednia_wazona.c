@@ -18,7 +18,7 @@ double Srednia_wazona(int *poczatek, int *koniec)
 int main(void)
 {
   int tab[6];
-  int rozmiar = sizeof(tab)/sizeof(tab[0]);
+  const int rozmiar = sizeof(tab)/sizeof(tab[0]);
   for(int i=0;i<rozmiar;++i)
   {
     printf("Podaj liczbe nr %d: ",(i+1));
