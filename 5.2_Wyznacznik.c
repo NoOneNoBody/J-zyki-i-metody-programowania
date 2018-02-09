@@ -4,7 +4,7 @@ Liczenie wyznacznika macierzy */
 #include <time.h>
 #include <stdlib.h>
 
-int Wyznacznik_macierzy(int macierz[][], int rozmiar)
+int Wyznacznik_macierzy(int macierz[3][3], int rozmiar)
 {
   int wyznacznik = 0;
   int iloczyn = 1;
@@ -31,7 +31,7 @@ int Wyznacznik_macierzy(int macierz[][], int rozmiar)
   return wyznacznik;
 }
 
-void Losowanie_macierzy(int macierz[][], int rozmiar)
+void Losowanie_macierzy(int macierz[3][3], int rozmiar)
 {
   srand(time(NULL));
   for(int i=0;i<rozmiar;i++)
